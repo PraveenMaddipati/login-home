@@ -10,7 +10,13 @@
  -->
 
 
-
+ <nav class="navbar navbar-default" style="background-color: red">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">WebSiteName</a>
+      </div>
+    </div>
+  </nav>
 
 
 <div class="searchForm">
@@ -18,19 +24,34 @@
 </div>
 <div class="row">
     <div class="column left">
-      <div class="header">Projects</div>
+      <div class="header">ControlM Jobs List</div><br>
+      <p><strong>select the job from list to show graph</strong></p>
       <div class="content">
-      <ul>
-          <li *ngFor="let c of characters | search : searchText">
-            {{c}}
+      <ul style="border: 2px solid orangered">
+          <li *ngFor="let c of characters | search : searchText" (click)="onSelect(c)" style="cursor: pointer">
+            {{c.Name}}
           </li>
         </ul>
       </div>
     </div>
     <div class="column middle">
-        <div class="header">Nodes</div>
+        <div class="header">Graphical View of Hadoop jobs</div>
     </div>
-    <div class="column right">
-        <div class="header">Node properties</div>
+    <div class="column right" >
+        <div class="header">Job properties</div>
+        <div *ngIf="selectedJob">
+          <span><strong>Job name:</strong> </span>{{selectedJob.Name}}<br>
+           <span><strong>Description:</strong></span>{{selectedJob.ID}}<br>
+          <span><strong>Business Application:</strong> </span>{{selectedJob.ID}}<br>
+          <span><strong>Database:</strong> </span>{{selectedJob.Type}}<br>
+          <span><strong>Table:</strong> </span>{{selectedJob.Name}}<br>
+          <span><strong>Project:</strong> </span>{{selectedJob.Name}}<br>
+          <span><strong>Execution Time: </strong></span>{{selectedJob.Name}}<br>
+          <span><strong>Execution Frequency:</strong> </span>{{selectedJob.Name}}<br>
+          <span><strong>Operation Field:</strong> </span>{{selectedJob.Name}}<br>
+          <span><strong>Job Category:</strong> </span>{{selectedJob.Name}}<br>
+          <span><strong>Requestor:</strong> </span>{{selectedJob.Name}}<br>
+          <span><strong>Support Contact:</strong> </span>{{selectedJob.Name}}<br>
+          <span><strong>Additional Information:</strong> </span>{{selectedJob.Name}}
     </div>
   </div>

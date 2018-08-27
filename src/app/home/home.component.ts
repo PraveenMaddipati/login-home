@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,18 +8,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  characters = [
-    'Finn the human',
-    'Jake the dog',
-    'Princess bubblegum',
-    'Lumpy Space Princess',
-    'Beemo1',
-    'Beemo2'
-  ]
+  selectedJob: any;
 
-  constructor() { }
+  characters = [{
+    "ID": "001",
+   "Name": "Eurasian Collared-Dove",
+    "Type": "Dove",
+    "Scientific Name": "Streptopelia"
+},
+{
+    "ID": "002",
+    "Name": "Bald Eagle",
+    "Type": "Hawk",
+    "Scientific Name": "Haliaeetus leucocephalus" 
+},
+{
+    "ID": "003",
+    "Name": "Cooper's Hawk",
+    "Type": "Hawk",
+    "Scientific Name": "Accipiter cooperii" 
+}]
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  onSelect(c:any) {
+    this.selectedJob = c;
+    console.log("selectedname" + this.selectedJob.Name);
   }
 
 }

@@ -1,17 +1,3 @@
- /* input {
-    margin: 20px 15px;
-    font-size: 20px;
-    height: 45px;
-    border-radius: 10px;
-    padding-right: 250px;
-    outline: none;
-    -webkit-box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25);
-    box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25);
-} */
-
-span {
-    font-size: xx-large;
-}
 
 /* Create three unequal columns that floats next to each other */
  .column {
@@ -23,17 +9,17 @@ span {
 
 .left {
   width: 20%;
-  background: lightslategray;
+  border-right: 3px solid skyblue;
 }
 
 .right {
     width: 30%;
-    background: lightslategray;
+    border-left: 3px solid skyblue;
 }
 
 .middle {
   width: 50%;
-  background: transparent;
+  border-right: 3px solid skyblue;
 } 
 
 /* Clear floats after the columns */
@@ -50,9 +36,7 @@ span {
 .header {
     padding: 10px;
     text-align: center;
-    background: #1abc9c;
-    color: white;
-    font-size: 30px;
+    font-size: 20px;
   }
 
   .content {
@@ -100,18 +84,6 @@ span {
 
 }
 
-/*.searchbutton {
-    border: 0;
-    position: absolute;
-    width: 38px;
-    cursor: pointer;
-    margin: 2px -38px;
-    border-left: 2px solid skyblue;
-    height: 26px;
-    font-weight: 900;
-    font-size: 12px;
-    background-color: #f6f5ef;
-    -webkit-border-radius: 0px 5px 5px 0px;
-    -moz-border-radius: 0px 5px 5px 0px;
-    border-radius: 0px 5px 5px 0px;
-} */
+span {
+    font-size: 15px;
+}
