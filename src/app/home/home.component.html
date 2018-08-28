@@ -1,12 +1,6 @@
-<!-- <form class="searchForm" method="GET" action="">
-    <input class="searchTerm" [(ngModel)]="searchText" placeholder="search...." autocomplete="off"/>
-    <input type="submit" class="searchbutton" value="GO">
-    <ul class="suggestionBox">
-      <li *ngFor="let c of characters | search : searchText">
-        {{c}}
-      </li>
-    </ul>
-</form>
+<!-- <div class="searchForm">
+<input class="searchTerm" [(ngModel)]="searchText" placeholder="Search...."> 
+</div>
  -->
 
 
@@ -18,24 +12,26 @@
     </div>
   </nav>
 
-
-<div class="searchForm">
-<input class="searchTerm" [(ngModel)]="searchText" placeholder="Search...."> 
-</div>
+<form class="searchForm" [formGroup]="elegantForm" (ngSubmit)="getProjects(elegantForm.value)">
+    <input class="searchTerm" placeholder="search...." autocomplete="off" formControlName="searchText"/>
+    <button type="submit" class="btn"><span>GO</span></button>
+</form>
 <div class="row">
-    <div class="column left">
+    <div  class="column left">
       <div class="header">ControlM Jobs List</div><br>
       <p><strong>select the job from list to show graph</strong></p>
-      <div class="content">
+      <div *ngIf="characters" class="content">
       <ul style="border: 2px solid orangered">
-          <li *ngFor="let c of characters | search : searchText" (click)="onSelect(c)" style="cursor: pointer">
-            {{c.Name}}
-          </li>
+          <li *ngFor="let c of characters.nodes" (click)="toggleChild()" style="cursor: pointer">
+      {{c.id}}
         </ul>
       </div>
     </div>
     <div class="column middle">
         <div class="header">Graphical View of Hadoop jobs</div>
+        <div >
+          <app-d3-graphs [showMePartially]="showVar"></app-d3-graphs>
+        </div>
     </div>
     <div class="column right" >
         <div class="header">Job properties</div>

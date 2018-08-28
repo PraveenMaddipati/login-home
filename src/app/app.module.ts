@@ -9,6 +9,12 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { SearchPipe } from './search.pipe';
 
+
+import { D3Service, D3_DIRECTIVES } from './d3';
+import { GraphComponent } from './visuals/graph/graph.component';
+import { SHARED_VISUALS } from './visuals/shared';
+import { D3GraphsComponent } from './d3-graphs/d3-graphs.component';
+
 const appRoutes: Routes = [
   { path:'login', component: LoginComponent},
   { path: 'home', component: HomeComponent },
@@ -20,7 +26,11 @@ const appRoutes: Routes = [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    SearchPipe
+    SearchPipe,
+    GraphComponent,
+    ...SHARED_VISUALS,
+    ...D3_DIRECTIVES,
+    D3GraphsComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +39,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes, { enableTracing: false})
   ],
-  providers: [],
+  providers: [D3Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

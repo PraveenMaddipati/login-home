@@ -46,7 +46,7 @@
 .searchForm {
     width: 500px;
     margin: 30px;
-    width: 325px;
+    width: 370px;
     background-color: black;
     padding: 20px;
     height: 65px;
@@ -76,7 +76,7 @@
     width: 250px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
-    border-radius: 5px;
+    border-radius: 0px;
     -webkit-box-shadow: 1px 1px 5px rgba(0,0,0,0.65);
     -moz-box-shadow: 1px 1px 5px rgba(0,0,0,0.65);
     box-shadow:  1px 1px 5px rgba(0,0,0,0.65);
@@ -86,4 +86,10 @@
 
 span {
     font-size: 15px;
+}
+
+.btn {
+    border-radius: 0px;
+    height: 30px;
+    margin-top: -3px;
 }
